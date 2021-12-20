@@ -80,7 +80,12 @@ public class TriviaMazeGUI extends JFrame implements ActionListener {
 	/**
 	 * The player panel.
 	 */
-	private static PlayerPanel MY_PLAYER_PANEL = new PlayerPanel();
+	//private static PlayerPanel MY_PLAYER_PANEL = new PlayerPanel();
+	
+	/**
+	 * The player panel.
+	 */
+	private static Controller MY_CONTROLLER = new Controller();
 
 
 	/**
@@ -184,7 +189,8 @@ public class TriviaMazeGUI extends JFrame implements ActionListener {
 	private void setLeftPanel() {
 		myLeftPanel.setOpaque(false);
 		myLeftPanel.add(MY_INFO_PANEL);
-		myLeftPanel.add(MY_PLAYER_PANEL);
+		//myLeftPanel.add(MY_PLAYER_PANEL);
+		myLeftPanel.add(MY_CONTROLLER);
 		myLeftPanel.setSize(MY_WIDTH/2, MY_HEIGHT);
 	}
 
@@ -338,15 +344,26 @@ public class TriviaMazeGUI extends JFrame implements ActionListener {
 		MY_MAZE_PANEL.setMaze(theString);
 	}
 
-	public RoomPanel getRoomPanel() {
-		return MY_PLAYER_PANEL.getRoomPanel();
+//	public RoomPanel getRoomPanel() {
+//		return MY_PLAYER_PANEL.getRoomPanel();
+//	}
+//
+//	public void playBackgroundMusic() {
+//		RoomPanel roomPanel = MY_PLAYER_PANEL.getRoomPanel();
+//		if(!roomPanel.isPlayingMusic()) {
+//			roomPanel.myBackgroundMusic.start();
+//			roomPanel.myBackgroundMusic.loop();
+//		}
+//	}
+	
+	public Controller getRoomPanel() {
+		return MY_CONTROLLER;
 	}
 
 	public void playBackgroundMusic() {
-		RoomPanel roomPanel = MY_PLAYER_PANEL.getRoomPanel();
-		if(!roomPanel.isPlayingMusic()) {
-			roomPanel.myBackgroundMusic.start();
-			roomPanel.myBackgroundMusic.loop();
+		if(!MY_CONTROLLER .isPlayingMusic()) {
+			MY_CONTROLLER .myBackgroundMusic.start();
+			MY_CONTROLLER .myBackgroundMusic.loop();
 		}
 	}
 

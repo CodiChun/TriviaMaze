@@ -13,6 +13,11 @@ import model.MazeForGUI;
  */
 public class IniMaze implements Serializable{
 	
+	/**
+	 * Serial Version UID
+	 */
+	private static final long serialVersionUID = -7922123374957655695L;
+	
 	private static IniMaze myInstance = null;
 	private MazeBuilderForGUI myBuilder;
     private MazeForGUI myMaze;

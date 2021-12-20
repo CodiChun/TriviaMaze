@@ -52,10 +52,12 @@ public class Database {
      * Retrieves all trivia questions from SQLite database and adds them to trivia list
      * @param theDatabase SQLite database source
      */
-    private static void getTriviaFromDatabase(SQLiteDataSource theDatabase) {
+	private static void getTriviaFromDatabase(SQLiteDataSource theDatabase) {
         ResultSet rs;
-        try (Connection conn = theDatabase.getConnection();
-             Statement stmt = conn.createStatement())  {
+        try  {
+        	
+        	Connection conn = theDatabase.getConnection();
+            Statement stmt = conn.createStatement();
 
             String query = "SELECT * FROM ";
             rs = stmt.executeQuery(query + MC);
